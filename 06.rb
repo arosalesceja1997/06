@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class GameLive
+  # This is my game
   def initialize
     @longitud = 10
     @matrix = Array.new(10) { Array.new(10) { 0 } }
@@ -36,7 +37,6 @@ class GameLive
       end
     end
     @matrix = tem_matrix
-    return @matrix
   end
 
   def juego_reglas(x, y, es_viva)
@@ -45,7 +45,7 @@ class GameLive
     part2(x, y)
     part3(x, y)
     part4(x, y)
-    return retorno(es_viva)
+    retorno(es_viva)
   end
 
   def part1(x, y)
@@ -86,9 +86,9 @@ class GameLive
 
   def retorno(es_viva)
     if es_viva
-      return (@celulas_vivas == 2 || @celulas_vivas == 3 ? 1 : 0)
+      (@celulas_vivas == 2 || @celulas_vivas == 3 ? 1 : 0)
     else
-      return (@celulas_vivas == 3 ? 1 : 0)
+      (@celulas_vivas == 3 ? 1 : 0)
     end
   end
 end
@@ -109,7 +109,7 @@ class GamecaseTest < Minitest::Test
     test_game.llenado_manual(3, 3)
     test_game.juego_dibujar
 
-    res = ""
+    res = ''
     (0..3).each do |_i|
       res = test_game.jugando_game
       puts
